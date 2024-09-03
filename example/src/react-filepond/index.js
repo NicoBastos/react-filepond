@@ -2,7 +2,7 @@
  * react-filepond v7.1.2
  * A handy FilePond adapter component for React
  * 
- * Copyright (c) 2022 PQINA
+ * Copyright (c) 2024 PQINA
  * https://pqina.nl/filepond
  * 
  * Licensed under the MIT license.
@@ -10,70 +10,68 @@
 
 "use strict";
 
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.FilePond = exports.FileStatus = exports.registerPlugin = undefined;
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = require("react");
-
-var _react2 = _interopRequireDefault(_react);
-
+exports.FilePond = void 0;
+Object.defineProperty(exports, "FileStatus", {
+  enumerable: true,
+  get: function get() {
+    return _filepond.FileStatus;
+  }
+});
+Object.defineProperty(exports, "registerPlugin", {
+  enumerable: true,
+  get: function get() {
+    return _filepond.registerPlugin;
+  }
+});
+var _react = _interopRequireWildcard(require("react"));
 var _filepond = require("filepond");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-// Import required methods and styles from the FilePond module, should not need anything else
-
-
+function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
+function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
+function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
+function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o); } }
+function _createClass(e, r, t) { return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+function _callSuper(t, o, e) { return o = _getPrototypeOf(o), _possibleConstructorReturn(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], _getPrototypeOf(t).constructor) : o.apply(t, e)); }
+function _possibleConstructorReturn(t, e) { if (e && ("object" == _typeof(e) || "function" == typeof e)) return e; if (void 0 !== e) throw new TypeError("Derived constructors may only return object or undefined"); return _assertThisInitialized(t); }
+function _assertThisInitialized(e) { if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); return e; }
+function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
+function _getPrototypeOf(t) { return _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function (t) { return t.__proto__ || Object.getPrototypeOf(t); }, _getPrototypeOf(t); }
+function _inherits(t, e) { if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function"); t.prototype = Object.create(e && e.prototype, { constructor: { value: t, writable: !0, configurable: !0 } }), Object.defineProperty(t, "prototype", { writable: !1 }), e && _setPrototypeOf(t, e); }
+function _setPrototypeOf(t, e) { return _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function (t, e) { return t.__proto__ = e, t; }, _setPrototypeOf(t, e); } // Import required methods and styles from the FilePond module, should not need anything else
 // We need to be able to call the registerPlugin method directly so we can add plugins
-exports.registerPlugin = _filepond.registerPlugin;
-exports.FileStatus = _filepond.FileStatus;
-
 // Do this once
-
 var isSupported = (0, _filepond.supported)();
 
 // filtered methods
 var filteredMethods = ["setOptions", "on", "off", "onOnce", "appendTo", "insertAfter", "insertBefore", "isAttachedTo", "replaceElement", "restoreElement", "destroy"];
 
 // The React <FilePond/> wrapper
-
-var FilePond = exports.FilePond = function (_React$Component) {
-  _inherits(FilePond, _React$Component);
-
+var FilePond = exports.FilePond = /*#__PURE__*/function (_React$Component) {
   function FilePond(props) {
+    var _this;
     _classCallCheck(this, FilePond);
-
-    var _this = _possibleConstructorReturn(this, (FilePond.__proto__ || Object.getPrototypeOf(FilePond)).call(this, props));
-
+    _this = _callSuper(this, FilePond, [props]);
     _this.allowFilesSync = true;
     return _this;
   }
 
   // Will setup FilePond instance when mounted
-
-
-  _createClass(FilePond, [{
+  _inherits(FilePond, _React$Component);
+  return _createClass(FilePond, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       var _this2 = this;
-
       // clone the input so we can restore it in unmount
       this._input = this._element.querySelector('input[type="file"]');
       this._inputClone = this._input.cloneNode();
 
       // exit here if not supported
       if (!isSupported) return;
-
       var options = Object.assign({}, this.props);
 
       // if onupdate files is defined, make sure setFiles does not cause race condition
@@ -97,7 +95,6 @@ var FilePond = exports.FilePond = function (_React$Component) {
     }
 
     // Will clean up FilePond instance when unmounted
-
   }, {
     key: "componentWillUnmount",
     value: function componentWillUnmount() {
@@ -129,13 +126,11 @@ var FilePond = exports.FilePond = function (_React$Component) {
     }
 
     // Something changed
-
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate() {
       // exit when no pond defined
       if (!this._pond) return;
-
       var options = Object.assign({}, this.props);
 
       // this is only set onces, on didmount
@@ -146,27 +141,24 @@ var FilePond = exports.FilePond = function (_React$Component) {
     }
 
     // Renders basic element hook for FilePond to attach to
-
   }, {
     key: "render",
     value: function render() {
       var _this3 = this;
-
-      var _props = this.props,
-          id = _props.id,
-          name = _props.name,
-          className = _props.className,
-          allowMultiple = _props.allowMultiple,
-          required = _props.required,
-          captureMethod = _props.captureMethod,
-          acceptedFileTypes = _props.acceptedFileTypes;
-
-      return (0, _react.createElement)("div", {
+      var _this$props = this.props,
+        id = _this$props.id,
+        name = _this$props.name,
+        className = _this$props.className,
+        allowMultiple = _this$props.allowMultiple,
+        required = _this$props.required,
+        captureMethod = _this$props.captureMethod,
+        acceptedFileTypes = _this$props.acceptedFileTypes;
+      return /*#__PURE__*/(0, _react.createElement)("div", {
         className: "filepond--wrapper",
         ref: function ref(element) {
           return _this3._element = element;
         }
-      }, (0, _react.createElement)("input", {
+      }, /*#__PURE__*/(0, _react.createElement)("input", {
         type: "file",
         name: name,
         id: id,
@@ -178,8 +170,6 @@ var FilePond = exports.FilePond = function (_React$Component) {
       }));
     }
   }]);
-
-  return FilePond;
-}(_react2.default.Component);
+}(_react["default"].Component);
 
 

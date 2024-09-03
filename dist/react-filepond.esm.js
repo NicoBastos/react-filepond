@@ -2,7 +2,7 @@
  * react-filepond v7.1.2
  * A handy FilePond adapter component for React
  * 
- * Copyright (c) 2022 PQINA
+ * Copyright (c) 2024 PQINA
  * https://pqina.nl/filepond
  * 
  * Licensed under the MIT license.

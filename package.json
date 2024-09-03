@@ -35,22 +35,25 @@
     "dtslint": "dtslint types"
   },
   "peerDependencies": {
+    "filepond": ">=3.7.x < 5.x",
     "react": "16 - 18",
-    "react-dom": "16 - 18",
-    "filepond": ">=3.7.x < 5.x"
+    "react-dom": "16 - 18"
   },
   "devDependencies": {
+    "@babel/cli": "^7.25.6",
+    "@babel/core": "^7.25.2",
+    "@babel/plugin-transform-runtime": "^7.25.4",
+    "@babel/preset-env": "^7.25.4",
+    "@babel/preset-react": "^7.24.7",
     "@types/react": "^16.9.48",
     "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "bannerjs": "^1.0.5",
-    "dtslint": "^3.7.0",
+    "dtslint": "^3.4.2",
     "filepond": ">=3.7.x <5.x",
     "minicat": "^1.0.0",
     "mkdirp": "^0.5.1",
-    "nodemon": "^1.17.3",
+    "nodemon": "^3.1.4",
     "typescript": "^4.0.2"
   }
 }
